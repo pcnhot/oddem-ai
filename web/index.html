@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <!-- The base href is rewritten at build time via `flutter build web --base-href`. -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description"
+        content="ODDEM — Saudi AI + AR interior design and furniture shopping app.">
+
+  <!-- iOS / iPad add-to-home-screen support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="ODDEM">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#1E3246">
+
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="manifest" href="manifest.json">
+
+  <title>ODDEM</title>
+
+  <style>
+    html, body { height: 100%; margin: 0; background-color: #1E3246; }
+    #loading {
+      position: fixed; inset: 0; display: flex; align-items: center;
+      justify-content: center; flex-direction: column; color: #FFFFFF;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    #loading .dot {
+      width: 56px; height: 56px; border-radius: 16px; background: #FFFFFF;
+      display: flex; align-items: center; justify-content: center; color: #1E3246;
+      font-size: 28px; font-weight: 700; margin-bottom: 16px;
+    }
+    #loading .spinner {
+      margin-top: 18px; width: 24px; height: 24px; border: 3px solid rgba(255,255,255,0.3);
+      border-top-color: #FFFFFF; border-radius: 50%; animation: spin 0.9s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <div class="dot">O</div>
+    <div>ODDEM</div>
+    <div class="spinner"></div>
+  </div>
+
+  <script>
+    // Remove the loading splash once Flutter renders its first frame.
+    window.addEventListener('flutter-first-frame', function () {
+      var el = document.getElementById('loading');
+      if (el) el.remove();
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

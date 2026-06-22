@@ -1,0 +1,67 @@
+name: Deploy Flutter Web to GitHub Pages
+
+# Builds the Flutter web app and publishes it to GitHub Pages so the MVP can be
+# opened from a browser link. This does not change app behavior.
+
+on:
+  # Deploy when the app lands on main.
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**/*.md'
+  # Allow manual runs from the Actions tab (e.g. before merging).
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.27.4
+          cache: true
+
+      - name: Flutter version
+        run: flutter --version
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build web (base href = /oddem-ai/)
+        # The repository name is the GitHub Pages sub-path, so the base href
+        # must match: https://<owner>.github.io/oddem-ai/
+        run: flutter build web --release --base-href /oddem-ai/
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/web
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
