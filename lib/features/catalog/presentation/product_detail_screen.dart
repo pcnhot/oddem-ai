@@ -244,7 +244,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
           child: OutlinedButton.icon(
             onPressed: () => context.push(AppRoutes.arPreview, extra: product),
             icon: const Icon(Icons.view_in_ar),
-            label: const Text('معاينة AR'),
+            label: const Text('شاهد في غرفتي'),
           ),
         ),
         const SizedBox(width: 12),

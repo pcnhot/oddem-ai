@@ -76,7 +76,7 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text('مصمم ODDEM', style: AppTextStyles.subtitle),
+                Text('مصمم Odem', style: AppTextStyles.subtitle),
                 Text('مساعد تصميم • تجريبي', style: AppTextStyles.caption),
               ],
             ),

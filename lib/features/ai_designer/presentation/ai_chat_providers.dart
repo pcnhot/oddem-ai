@@ -29,7 +29,7 @@ class AiChatController extends StateNotifier<AiChatState> {
           ChatMessage(
             role: ChatRole.assistant,
             text:
-                'مرحبًا بك في مصمم ODDEM 👋\nصف لي غرفتك (النوع، الطراز، الميزانية) وسأساعدك في اختيار قطع متناسقة.',
+                'مرحبًا بك في مصمم Odem 👋\nصف لي غرفتك (النوع، الطراز، الميزانية) وسأساعدك في اختيار قطع متناسقة.',
             time: DateTime.now(),
           ),
         ]));

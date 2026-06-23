@@ -243,7 +243,7 @@ class _ChatEntryCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('محادثة مع مصمم ODDEM', style: AppTextStyles.subtitle),
+                  Text('محادثة مع مصمم Odem', style: AppTextStyles.subtitle),
                   const SizedBox(height: 2),
                   Text('اسأل المصمم واحصل على اقتراحات فورية',
                       style: AppTextStyles.caption),
@@ -258,8 +258,8 @@ class _ChatEntryCard extends StatelessWidget {
   }
 }
 
-/// StrictMode: change only ONE item in the room while keeping the rest
-/// exactly the same.
+/// "Change one piece only" — replaces a single item while keeping the rest of
+/// the room unchanged.
 class _StrictModeCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -277,9 +277,8 @@ class _StrictModeCard extends ConsumerWidget {
           SwitchListTile(
             contentPadding: EdgeInsets.zero,
             activeColor: AppColors.primary,
-            title: const Text('الوضع الصارم (StrictMode)'),
-            subtitle: const Text(
-                'تغيير عنصر واحد فقط في الغرفة مع الإبقاء على كل شيء آخر كما هو.'),
+            title: const Text('تغيير قطعة واحدة فقط'),
+            subtitle: const Text('سنحافظ على بقية الغرفة كما هي.'),
             value: request.strictMode,
             onChanged: (v) => ref.read(aiRequestProvider.notifier).state =
                 request.copyWith(strictMode: v),

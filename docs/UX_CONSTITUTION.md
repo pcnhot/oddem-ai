@@ -1,10 +1,10 @@
-# ODDEM UX Constitution
+# Odem UX Constitution
 
 > Permanent reference for all UI, product, and content decisions.
 > When any future change conflicts with this document, this document wins.
 
-ODDEM is **not** a normal furniture store.
-ODDEM is an **intelligent designer** that guides the user to choose and buy
+Odem is **not** a normal furniture store.
+Odem is an **intelligent designer** that guides the user to choose and buy
 suitable furniture with the **least thinking possible**.
 
 ## Reference model
@@ -22,8 +22,8 @@ product pages, less cluttered than Houzz, and much simpler than Planner 5D.
 - Do **not** start the experience with a 2D Planner.
 - Do **not** show too many options at the beginning.
 - Do **not** promise a fixed installation time (never "تركيب خلال 72 ساعة").
-- Do **not** make ODDEM feel like an engineering tool.
-- Do **not** make ODDEM feel like only a furniture catalog.
+- Do **not** make Odem feel like an engineering tool.
+- Do **not** make Odem feel like only a furniture catalog.
 
 ## Core rule — one question per screen
 Every screen must answer **only one** of these user questions:
@@ -62,7 +62,7 @@ Every screen must answer **only one** of these user questions:
 - Inspiration section: **غرف جاهزة للإلهام**
 - Product section: **مختارات لغرفة المعيشة**
 
-### AI Designer ("المصمم") — the heart of ODDEM
+### AI Designer ("المصمم") — the heart of Odem
 The most important screen, and it must be the **easiest**, not the one with the
 most options. Use **progressive disclosure**.
 - Title: **لنصمّم غرفتك**
@@ -121,7 +121,8 @@ Not a main tab. Keep under advanced options or defer to a later stage.
 
 ## Visual style
 Clean, calm, premium-but-restrained, easy, mobile-first.
-Colors: **Navy, Charcoal, White, Light Grey**.
+Colors (Odem furniture brand book): **Sage green #737B4D (main), Rust #A25033
+(accent only), Beige cream #EAD7CB, White #FFFFFF**. Warm/earthy, not cold tech.
 
 ### Spacing
 - Inside cards: **12–16px**
@@ -146,7 +147,7 @@ secondary.
 | JSON / Mock / Demo URL / backend terms | (hidden entirely) |
 
 ## Most dangerous UX mistake
-ODDEM must never feel like "furniture store + technical buttons".
+Odem must never feel like "furniture store + technical buttons".
 It must feel like "an intelligent designer guiding the user to buy suitable
 furniture."
 

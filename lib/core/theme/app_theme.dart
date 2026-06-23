@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'app_colors.dart';
 import 'app_text_styles.dart';
 
-/// Builds the global ODDEM [ThemeData]. Light theme only for the MVP.
+/// Builds the global Odem [ThemeData]. Light theme only for the MVP.
 class AppTheme {
   AppTheme._();
 
@@ -17,6 +17,12 @@ class AppTheme {
         onPrimary: AppColors.onPrimary,
         secondary: AppColors.navy,
         onSecondary: AppColors.white,
+        // Rust registered as the accent — used sparingly by Material.
+        tertiary: AppColors.accent,
+        onTertiary: AppColors.white,
+        // Warm beige for incidental container surfaces.
+        secondaryContainer: AppColors.beige,
+        onSecondaryContainer: AppColors.navy,
         surface: AppColors.surface,
         onSurface: AppColors.textPrimary,
         error: AppColors.error,

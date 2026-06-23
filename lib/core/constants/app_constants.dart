@@ -1,8 +1,8 @@
-/// App-wide constants for ODDEM.
+/// App-wide constants for Odem.
 class AppConstants {
   AppConstants._();
 
-  static const String appName = 'ODDEM';
+  static const String appName = 'Odem';
   static const String appNameAr = 'أوديم';
 
   /// Saudi Arabia first. Currency is Saudi Riyal.

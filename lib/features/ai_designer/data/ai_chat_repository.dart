@@ -27,7 +27,7 @@ class MockAiChatRepository implements AiChatRepository {
     bool any(List<String> words) => words.any(t.contains);
 
     if (any(['مرحبا', 'السلام', 'هلا', 'اهلا', 'أهلا'])) {
-      return 'أهلًا بك في مصمم ODDEM 👋\n'
+      return 'أهلًا بك في مصمم Odem 👋\n'
           'أخبرني عن الغرفة (مثل: مجلس أو غرفة نوم)، والطراز الذي تفضله، وميزانيتك التقريبية، '
           'وسأقترح لك قطعًا متناسقة من موردين سعوديين موثوقين.';
     }
@@ -75,6 +75,6 @@ class MockAiChatRepository implements AiChatRepository {
         '١) نوع الغرفة (مجلس، نوم، طعام، مكتب...)\n'
         '٢) الطراز المفضّل (حديث، كلاسيكي، مينيمال...)\n'
         '٣) ميزانيتك التقريبية\n'
-        'وسأقترح لك توزيعة قطع متناسقة من ODDEM.';
+        'وسأقترح لك توزيعة قطع متناسقة من Odem.';
   }
 }
