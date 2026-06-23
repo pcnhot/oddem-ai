@@ -142,29 +142,18 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   }
 }
 
-/// Centered ODDEM brand mark used on the auth screens.
+/// Centered Odem logo used on the auth screens (on white background).
 class _BrandHeader extends StatelessWidget {
   const _BrandHeader();
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: 76,
-          height: 76,
-          decoration: BoxDecoration(
-            color: AppColors.navy,
-            borderRadius: BorderRadius.circular(22),
-          ),
-          child: const Icon(Icons.chair_alt, color: AppColors.white, size: 40),
-        ),
-        const SizedBox(height: 14),
-        Text(
-          AppConstants.appName,
-          style: AppTextStyles.displayLarge.copyWith(letterSpacing: 3),
-        ),
-      ],
+    return Center(
+      child: Image.asset(
+        'assets/images/odem_logo_transparent.png',
+        width: 190,
+        fit: BoxFit.contain,
+      ),
     );
   }
 }

@@ -24,7 +24,11 @@ class HomeScreen extends ConsumerWidget {
         titleSpacing: 16,
         title: Row(
           children: [
-            const Icon(Icons.chair_alt, color: AppColors.primary),
+            Image.asset(
+              'assets/images/odem_mark_transparent.png',
+              height: 30,
+              fit: BoxFit.contain,
+            ),
             const SizedBox(width: 8),
             Text(AppConstants.appName,
                 style: AppTextStyles.title.copyWith(letterSpacing: 2)),
