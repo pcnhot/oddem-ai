@@ -14,7 +14,7 @@
       "price": 1745,
       "oldPrice": 2095,
       "currency": "SAR",
-      "images": [],
+      "images": ["ikea_liv_01.jpg"],
       "category": "sofas",
       "roomType": "غرفة معيشة",
       "dimensions": {
@@ -45,7 +45,7 @@
       "price": 3295,
       "oldPrice": null,
       "currency": "SAR",
-      "images": [],
+      "images": ["ikea_liv_02.jpg"],
       "category": "sofas",
       "roomType": "غرفة معيشة",
       "dimensions": {
@@ -76,7 +76,7 @@
       "price": 899,
       "oldPrice": null,
       "currency": "SAR",
-      "images": [],
+      "images": ["ikea_liv_03.jpg"],
       "category": "sofas",
       "roomType": "غرفة معيشة",
       "dimensions": {
@@ -107,7 +107,7 @@
       "price": 799,
       "oldPrice": null,
       "currency": "SAR",
-      "images": [],
+      "images": ["ikea_liv_04.jpg"],
       "category": "sofas",
       "roomType": "غرفة معيشة",
       "dimensions": {
@@ -138,7 +138,7 @@
       "price": 3295,
       "oldPrice": null,
       "currency": "SAR",
-      "images": [],
+      "images": ["ikea_liv_05.jpg"],
       "category": "sofas",
       "roomType": "غرفة معيشة",
       "dimensions": {
@@ -169,7 +169,7 @@
       "price": 2395,
       "oldPrice": null,
       "currency": "SAR",
-      "images": [],
+      "images": ["ikea_liv_06.jpg"],
       "category": "sofas",
       "roomType": "غرفة معيشة",
       "dimensions": {
@@ -200,7 +200,7 @@
       "price": 899,
       "oldPrice": null,
       "currency": "SAR",
-      "images": [],
+      "images": ["ikea_liv_07.jpg"],
       "category": "sofas",
       "roomType": "غرفة معيشة",
       "dimensions": {
@@ -231,7 +231,7 @@
       "price": 1095,
       "oldPrice": null,
       "currency": "SAR",
-      "images": [],
+      "images": ["ikea_liv_08.jpg"],
       "category": "sofas",
       "roomType": "غرفة معيشة",
       "dimensions": {
