@@ -27,14 +27,11 @@ class OddemApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
 
-      // Guarantee RTL even on widgets that don't read locale directly, and
-      // constrain the whole app (Scaffolds, bottom nav, all tabs) to a centered
-      // mobile-width frame on wide web/tablet viewports.
-      builder: (context, child) => Directionality(
-        textDirection: TextDirection.rtl,
-        child: ResponsiveMobileShell(
-          child: child ?? const SizedBox.shrink(),
-        ),
+      // Constrain the whole app (Scaffolds, bottom nav, all tabs) to a
+      // centered mobile-width frame on wide web/tablet viewports. The shell
+      // owns directionality: neutral LTR outside for centering, RTL inside.
+      builder: (context, child) => ResponsiveMobileShell(
+        child: child ?? const SizedBox.shrink(),
       ),
     );
   }
