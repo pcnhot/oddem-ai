@@ -51,13 +51,27 @@ class AppImage extends StatelessWidget {
     return DecoratedBox(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [Color(0xFFEDEFF1), AppColors.lightGrey],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Color(0xFFF2F4F6), Color(0xFFE7EAED)],
         ),
       ),
       child: Center(
-        child: Icon(icon, size: 48, color: AppColors.midGrey),
+        child: LayoutBuilder(
+          builder: (context, c) {
+            final s = c.maxHeight.isFinite ? c.maxHeight : 120.0;
+            final box = (s * 0.34).clamp(28.0, 56.0);
+            return Container(
+              width: box,
+              height: box,
+              decoration: BoxDecoration(
+                color: AppColors.white,
+                borderRadius: BorderRadius.circular(box * 0.28),
+              ),
+              child: Icon(icon, size: box * 0.56, color: AppColors.midGrey),
+            );
+          },
+        ),
       ),
     );
   }

@@ -21,19 +21,29 @@ class OrderConfirmationScreen extends ConsumerWidget {
         child: order == null
             ? const Center(child: Text('لا يوجد طلب'))
             : ListView(
-                padding: const EdgeInsets.all(24),
+                padding: const EdgeInsets.fromLTRB(24, 24, 24, 32),
                 children: [
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 12),
                   Center(
                     child: Container(
-                      width: 96,
-                      height: 96,
-                      decoration: const BoxDecoration(
-                        color: AppColors.success,
+                      width: 112,
+                      height: 112,
+                      decoration: BoxDecoration(
+                        color: AppColors.success.withValues(alpha: 0.12),
                         shape: BoxShape.circle,
                       ),
-                      child: const Icon(Icons.check,
-                          color: AppColors.white, size: 56),
+                      child: Center(
+                        child: Container(
+                          width: 80,
+                          height: 80,
+                          decoration: const BoxDecoration(
+                            color: AppColors.success,
+                            shape: BoxShape.circle,
+                          ),
+                          child: const Icon(Icons.check_rounded,
+                              color: AppColors.white, size: 46),
+                        ),
+                      ),
                     ),
                   ),
                   const SizedBox(height: 24),

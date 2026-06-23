@@ -37,14 +37,14 @@ class CatalogScreen extends ConsumerWidget {
             ),
           ),
           SizedBox(
-            height: 44,
+            height: 52,
             child: categories.when(
               data: (items) => ListView(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 children: [
-                  _filterChip(ref, label: 'الكل', value: null,
-                      selected: selected == null),
+                  _filterChip(ref,
+                      label: 'الكل', value: null, selected: selected == null),
                   for (final c in items)
                     _filterChip(ref,
                         label: c.name,
@@ -56,7 +56,7 @@ class CatalogScreen extends ConsumerWidget {
               error: (_, __) => const SizedBox(),
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 4),
           Expanded(
             child: products.when(
               data: (items) {
@@ -105,11 +105,16 @@ class CatalogScreen extends ConsumerWidget {
   }) {
     return Padding(
       padding: const EdgeInsetsDirectional.only(end: 8),
-      child: ChoiceChip(
-        label: Text(label),
-        selected: selected,
-        onSelected: (_) =>
-            ref.read(selectedCategoryProvider.notifier).state = value,
+      // Center vertically so the chip is never clipped by the row height.
+      child: Center(
+        child: ChoiceChip(
+          label: Text(label),
+          selected: selected,
+          visualDensity: VisualDensity.compact,
+          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          onSelected: (_) =>
+              ref.read(selectedCategoryProvider.notifier).state = value,
+        ),
       ),
     );
   }

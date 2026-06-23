@@ -73,6 +73,7 @@ class _CartTile extends ConsumerWidget {
         border: Border.all(color: AppColors.border),
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             width: 84,
@@ -89,32 +90,51 @@ class _CartTile extends ConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(item.product.name,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: AppTextStyles.body
-                        .copyWith(fontWeight: FontWeight.w600)),
-                if (item.selectedColor != null)
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Text(item.product.name,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: AppTextStyles.body
+                              .copyWith(fontWeight: FontWeight.w600)),
+                    ),
+                    SizedBox(
+                      width: 36,
+                      height: 36,
+                      child: IconButton(
+                        padding: EdgeInsets.zero,
+                        iconSize: 20,
+                        icon: const Icon(Icons.delete_outline,
+                            color: AppColors.midGrey),
+                        onPressed: () => notifier.remove(item.product.id),
+                      ),
+                    ),
+                  ],
+                ),
+                if (item.selectedColor != null) ...[
+                  const SizedBox(height: 2),
                   Text('اللون: ${item.selectedColor!.name}',
                       style: AppTextStyles.caption),
-                const SizedBox(height: 6),
-                Text(Formatters.price(item.product.effectivePrice),
-                    style: AppTextStyles.price.copyWith(fontSize: 15)),
-                const SizedBox(height: 6),
+                ],
+                const SizedBox(height: 8),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     QuantitySelector(
                       quantity: item.quantity,
-                      onIncrement: () =>
-                          notifier.increment(item.product.id),
-                      onDecrement: () =>
-                          notifier.decrement(item.product.id),
+                      onIncrement: () => notifier.increment(item.product.id),
+                      onDecrement: () => notifier.decrement(item.product.id),
                     ),
                     const Spacer(),
-                    IconButton(
-                      icon: const Icon(Icons.delete_outline,
-                          color: AppColors.midGrey),
-                      onPressed: () => notifier.remove(item.product.id),
+                    Flexible(
+                      child: Text(
+                        Formatters.price(item.lineTotal),
+                        textAlign: TextAlign.end,
+                        overflow: TextOverflow.ellipsis,
+                        style: AppTextStyles.price.copyWith(fontSize: 15),
+                      ),
                     ),
                   ],
                 ),

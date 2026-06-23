@@ -31,37 +31,37 @@ class AiDesignerScreen extends ConsumerWidget {
         ],
       ),
       body: ListView(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.fromLTRB(16, 16, 16, 28),
         children: [
           Text('أخبرنا عن غرفتك وسنقترح لك تصميمًا متكاملاً',
               style: AppTextStyles.bodyMuted),
           const SizedBox(height: 16),
 
           _ChatEntryCard(onTap: () => context.push(AppRoutes.aiChat)),
-          const SizedBox(height: 16),
+          const SizedBox(height: 20),
 
           Text('نوع الغرفة', style: AppTextStyles.subtitle),
-          const SizedBox(height: 8),
+          const SizedBox(height: 10),
           _wrapChoices(
             options: AppConstants.roomTypes,
             value: request.roomType,
             onSelected: (v) => ref.read(aiRequestProvider.notifier).state =
                 request.copyWith(roomType: v),
           ),
-          const SizedBox(height: 16),
-
+          const SizedBox(height: 20),
           Text('الطراز', style: AppTextStyles.subtitle),
-          const SizedBox(height: 8),
+          const SizedBox(height: 10),
           _wrapChoices(
             options: AppConstants.designStyles,
             value: request.style,
             onSelected: (v) => ref.read(aiRequestProvider.notifier).state =
                 request.copyWith(style: v),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 24),
 
           Text('الميزانية: ${request.budget.toStringAsFixed(0)} ر.س',
               style: AppTextStyles.subtitle),
+          const SizedBox(height: 4),
           Slider(
             value: request.budget,
             min: 3000,

@@ -83,7 +83,9 @@ class DottedPlaceholder extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: AppColors.scaffold,
+        color: hasPhoto
+            ? AppColors.primary.withValues(alpha: 0.06)
+            : AppColors.scaffold,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
           color: hasPhoto ? AppColors.primary : AppColors.border,
@@ -94,15 +96,36 @@ class DottedPlaceholder extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              hasPhoto ? Icons.check_circle : Icons.image_outlined,
-              size: 64,
-              color: hasPhoto ? AppColors.success : AppColors.midGrey,
+            Container(
+              width: 84,
+              height: 84,
+              decoration: BoxDecoration(
+                color: AppColors.white,
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: hasPhoto ? AppColors.success : AppColors.border,
+                  width: 1.5,
+                ),
+              ),
+              child: Icon(
+                hasPhoto ? Icons.check_rounded : Icons.add_photo_alternate_outlined,
+                size: 40,
+                color: hasPhoto ? AppColors.success : AppColors.midGrey,
+              ),
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 16),
             Text(
               hasPhoto ? 'تم اختيار صورة الغرفة' : 'لم يتم اختيار صورة بعد',
-              style: AppTextStyles.bodyMuted,
+              textAlign: TextAlign.center,
+              style: AppTextStyles.subtitle,
+            ),
+            const SizedBox(height: 6),
+            Text(
+              hasPhoto
+                  ? 'يمكنك تغيير الصورة من الخيارات بالأسفل'
+                  : 'اختر من الكاميرا أو المعرض بالأسفل',
+              textAlign: TextAlign.center,
+              style: AppTextStyles.caption,
             ),
           ],
         ),

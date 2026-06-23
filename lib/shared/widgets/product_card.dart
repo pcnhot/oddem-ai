@@ -33,7 +33,7 @@ class ProductCard extends ConsumerWidget {
             Stack(
               children: [
                 AspectRatio(
-                  aspectRatio: 1.15,
+                  aspectRatio: 1.2,
                   child: AppImage(
                     path: product.imageUrls.isNotEmpty
                         ? product.imageUrls.first
@@ -41,27 +41,38 @@ class ProductCard extends ConsumerWidget {
                   ),
                 ),
                 if (product.hasDiscount)
-                  Positioned(
+                  PositionedDirectional(
                     top: 8,
-                    right: 8,
+                    start: 8,
                     child: _badge('خصم', AppColors.navy),
                   ),
                 if (!product.inStock)
-                  Positioned(
+                  PositionedDirectional(
                     top: 8,
-                    left: 8,
+                    end: 8,
                     child: _badge('غير متوفر', AppColors.midGrey),
                   ),
-                Positioned(
-                  bottom: 4,
-                  left: 4,
-                  child: IconButton(
-                    icon: Icon(
-                      isFav ? Icons.favorite : Icons.favorite_border,
-                      color: isFav ? AppColors.error : AppColors.midGrey,
+                PositionedDirectional(
+                  bottom: 6,
+                  end: 6,
+                  child: Material(
+                    color: AppColors.white,
+                    shape: const CircleBorder(),
+                    elevation: 1,
+                    child: InkWell(
+                      customBorder: const CircleBorder(),
+                      onTap: () => ref
+                          .read(favoritesProvider.notifier)
+                          .toggle(product.id),
+                      child: Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: Icon(
+                          isFav ? Icons.favorite : Icons.favorite_border,
+                          size: 20,
+                          color: isFav ? AppColors.error : AppColors.midGrey,
+                        ),
+                      ),
                     ),
-                    onPressed: () =>
-                        ref.read(favoritesProvider.notifier).toggle(product.id),
                   ),
                 ),
               ],

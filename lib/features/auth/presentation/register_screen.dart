@@ -47,14 +47,17 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
       appBar: AppBar(title: const Text('إنشاء حساب')),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(24),
+          padding: const EdgeInsets.fromLTRB(24, 16, 24, 24),
           child: Form(
             key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text('انضم إلى ${AppConstants.appName}',
-                    style: AppTextStyles.title),
+                    style: AppTextStyles.headline),
+                const SizedBox(height: 6),
+                Text('أنشئ حسابك لتبدأ التسوّق والتصميم بالذكاء الاصطناعي',
+                    style: AppTextStyles.bodyMuted),
                 const SizedBox(height: 24),
                 TextFormField(
                   controller: _name,
@@ -65,7 +68,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                   validator: (v) =>
                       (v == null || v.trim().isEmpty) ? 'أدخل اسمك' : null,
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 14),
                 TextFormField(
                   controller: _email,
                   keyboardType: TextInputType.emailAddress,
@@ -77,7 +80,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                       ? 'أدخل بريدًا صحيحًا'
                       : null,
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 14),
                 TextFormField(
                   controller: _password,
                   obscureText: true,
@@ -88,7 +91,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                   validator: (v) =>
                       (v == null || v.length < 6) ? '6 أحرف على الأقل' : null,
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: auth.isLoading ? null : _submit,
                   child: auth.isLoading

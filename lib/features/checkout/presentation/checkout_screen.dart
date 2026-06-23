@@ -46,7 +46,7 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
       backgroundColor: AppColors.scaffold,
       appBar: AppBar(title: const Text('إتمام الطلب')),
       body: ListView(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.fromLTRB(16, 16, 16, 28),
         children: [
           Text('مدينة التوصيل والتركيب', style: AppTextStyles.subtitle),
           const SizedBox(height: 8),
@@ -139,6 +139,9 @@ class _InstallationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final available = estimate.valueOrNull?.available ?? true;
+    final accent = available ? AppColors.primary : AppColors.warning;
+
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -149,24 +152,72 @@ class _InstallationCard extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Icon(Icons.handyman_outlined, color: AppColors.primary),
+          Container(
+            width: 44,
+            height: 44,
+            decoration: BoxDecoration(
+              color: accent.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Icon(Icons.handyman_outlined, color: accent, size: 22),
+          ),
           const SizedBox(width: 12),
           Expanded(
             child: estimate.when(
               data: (est) => Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('تقدير التركيب', style: AppTextStyles.subtitle),
+                  Row(
+                    children: [
+                      Text('تقدير التركيب', style: AppTextStyles.subtitle),
+                      const SizedBox(width: 8),
+                      _StatusPill(available: est.available),
+                    ],
+                  ),
                   const SizedBox(height: 6),
-                  Text(est.message, style: AppTextStyles.bodyMuted),
+                  Text(est.message,
+                      style: AppTextStyles.bodyMuted.copyWith(height: 1.6)),
                 ],
               ),
-              loading: () => const Text('جارٍ حساب تقدير التركيب...'),
-              error: (_, __) =>
-                  const Text('تعذّر حساب تقدير التركيب حاليًا.'),
+              loading: () => Row(
+                children: [
+                  const SizedBox(
+                    width: 16,
+                    height: 16,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  ),
+                  const SizedBox(width: 10),
+                  Text('جارٍ حساب تقدير التركيب...',
+                      style: AppTextStyles.bodyMuted),
+                ],
+              ),
+              error: (_, __) => Text('تعذّر حساب تقدير التركيب حاليًا.',
+                  style: AppTextStyles.bodyMuted),
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _StatusPill extends StatelessWidget {
+  const _StatusPill({required this.available});
+  final bool available;
+
+  @override
+  Widget build(BuildContext context) {
+    final color = available ? AppColors.success : AppColors.warning;
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.12),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Text(
+        available ? 'متاح' : 'يُنسّق لاحقًا',
+        style: AppTextStyles.caption
+            .copyWith(color: color, fontWeight: FontWeight.w700),
       ),
     );
   }
