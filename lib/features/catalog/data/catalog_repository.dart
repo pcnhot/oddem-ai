@@ -1,4 +1,5 @@
 import '../../../shared/data/mock_data.dart';
+import '../../../shared/data/product_loader.dart';
 import '../../../shared/models/category.dart';
 import '../../../shared/models/product.dart';
 import '../../../shared/models/supplier.dart';
@@ -13,7 +14,8 @@ abstract class CatalogRepository {
   Future<List<Product>> getFeatured();
 }
 
-/// Mock implementation backed by [MockData]. Simulates small network latency.
+/// Products are loaded from the bundled static JSON (assets/data/products.json)
+/// via [ProductLoader]; categories and suppliers still come from [MockData].
 class MockCatalogRepository implements CatalogRepository {
   const MockCatalogRepository();
 
@@ -29,7 +31,7 @@ class MockCatalogRepository implements CatalogRepository {
   @override
   Future<List<Product>> getProducts({String? categoryId, String? query}) async {
     await _delay();
-    var items = MockData.products;
+    var items = await ProductLoader.instance.load();
     if (categoryId != null && categoryId.isNotEmpty) {
       items = items.where((p) => p.categoryId == categoryId).toList();
     }
@@ -48,7 +50,8 @@ class MockCatalogRepository implements CatalogRepository {
   @override
   Future<Product?> getProductById(String id) async {
     await _delay();
-    for (final p in MockData.products) {
+    final items = await ProductLoader.instance.load();
+    for (final p in items) {
       if (p.id == id) return p;
     }
     return null;
@@ -65,6 +68,7 @@ class MockCatalogRepository implements CatalogRepository {
   @override
   Future<List<Product>> getFeatured() async {
     await _delay();
-    return MockData.products.where((p) => p.hasDiscount).toList();
+    final items = await ProductLoader.instance.load();
+    return items.where((p) => p.hasDiscount).toList();
   }
 }

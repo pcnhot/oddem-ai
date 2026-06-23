@@ -1,10 +1,10 @@
-import '../../../shared/data/mock_data.dart';
+import '../../../shared/data/product_loader.dart';
 import '../../../shared/models/ai_design_request.dart';
 import '../../../shared/models/ai_design_result.dart';
 import '../../../shared/models/product.dart';
 
 /// AI designer abstraction. Recommends products by room type, budget, style
-/// and dimensions. A real implementation will call the ODDEM AI service.
+/// and dimensions. A real implementation will call the Odem AI service.
 abstract class AiDesignerRepository {
   Future<AiDesignResult> generate(AiDesignRequest request);
 }
@@ -16,9 +16,11 @@ class MockAiDesignerRepository implements AiDesignerRepository {
   Future<AiDesignResult> generate(AiDesignRequest request) async {
     await Future<void>.delayed(const Duration(milliseconds: 1200));
 
+    final products = await ProductLoader.instance.load();
+
     // Rank candidates by how well they match style, room type and budget.
     final scored = <_Scored>[];
-    for (final p in MockData.products) {
+    for (final p in products) {
       double score = 0;
       if (p.style == request.style) score += 3;
       if (p.roomType == request.roomType) score += 3;

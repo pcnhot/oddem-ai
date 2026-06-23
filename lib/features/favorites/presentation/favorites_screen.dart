@@ -13,34 +13,44 @@ class FavoritesScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final favorites = ref.watch(favoriteProductsProvider);
+    final favoritesAsync = ref.watch(favoriteProductsProvider);
 
     return Scaffold(
       backgroundColor: AppColors.scaffold,
       appBar: AppBar(title: const Text('المفضلة')),
-      body: favorites.isEmpty
-          ? EmptyState(
+      body: favoritesAsync.when(
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (_, __) => const EmptyState(
+          icon: Icons.error_outline,
+          title: 'تعذّر تحميل المفضلة',
+        ),
+        data: (favorites) {
+          if (favorites.isEmpty) {
+            return EmptyState(
               icon: Icons.favorite_border,
               title: 'قائمة المفضلة فارغة',
               message: 'أضف المنتجات التي تعجبك لتجدها هنا بسهولة.',
               actionLabel: 'تصفّح المنتجات',
               onAction: () => context.go(AppRoutes.catalog),
-            )
-          : GridView.builder(
-              padding: const EdgeInsets.all(16),
-              itemCount: favorites.length,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 0.62,
-                crossAxisSpacing: 12,
-                mainAxisSpacing: 12,
-              ),
-              itemBuilder: (_, i) => ProductCard(
-                product: favorites[i],
-                onTap: () => context
-                    .push('${AppRoutes.productDetail}/${favorites[i].id}'),
-              ),
+            );
+          }
+          return GridView.builder(
+            padding: const EdgeInsets.all(16),
+            itemCount: favorites.length,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 0.62,
+              crossAxisSpacing: 12,
+              mainAxisSpacing: 12,
             ),
+            itemBuilder: (_, i) => ProductCard(
+              product: favorites[i],
+              onTap: () => context
+                  .push('${AppRoutes.productDetail}/${favorites[i].id}'),
+            ),
+          );
+        },
+      ),
     );
   }
 }

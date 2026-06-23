@@ -1,11 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../shared/data/mock_data.dart';
+import '../../../shared/data/product_loader.dart';
 import '../../../shared/models/product.dart';
 
 /// Favorites stored as a set of product ids.
 class FavoritesNotifier extends StateNotifier<Set<String>> {
-  FavoritesNotifier() : super(<String>{'p_1'}); // one seeded favorite
+  FavoritesNotifier() : super(<String>{'liv_01'}); // one seeded favorite
 
   void toggle(String productId) {
     final next = {...state};
@@ -21,7 +21,9 @@ final favoritesProvider =
   (ref) => FavoritesNotifier(),
 );
 
-final favoriteProductsProvider = Provider<List<Product>>((ref) {
+/// Favorite products resolved from the static product pipeline.
+final favoriteProductsProvider = FutureProvider<List<Product>>((ref) async {
   final ids = ref.watch(favoritesProvider);
-  return MockData.products.where((p) => ids.contains(p.id)).toList();
+  final all = await ProductLoader.instance.load();
+  return all.where((p) => ids.contains(p.id)).toList();
 });

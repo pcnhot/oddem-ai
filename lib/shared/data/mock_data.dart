@@ -32,6 +32,23 @@ class MockData {
       isVerified: false,
       servedCities: ['الدمام', 'الخبر', 'الرياض'],
     ),
+    // Sellers referenced by the static product pipeline (assets/data/products.json).
+    Supplier(
+      id: 'sup_seed',
+      name: 'Odem Selection',
+      city: 'الرياض',
+      rating: 4.4,
+      isVerified: true,
+      servedCities: ['الرياض', 'جدة', 'الدمام', 'الخبر', 'مكة المكرمة'],
+    ),
+    Supplier(
+      id: 'sup_ikea',
+      name: 'IKEA',
+      city: 'الرياض',
+      rating: 4.6,
+      isVerified: true,
+      servedCities: ['الرياض', 'جدة', 'الدمام', 'الخبر'],
+    ),
   ];
 
   static const List<Category> categories = <Category>[
