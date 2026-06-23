@@ -3,10 +3,14 @@ import 'package:flutter/material.dart';
 /// Constrains the app to a mobile width and centers it horizontally on wide
 /// (web / tablet) viewports, with a light neutral backdrop outside the frame.
 ///
-/// IMPORTANT: the outer centering layout is forced to LTR + [Alignment.center]
-/// so the app's Arabic RTL direction never pushes the mobile frame to the left
-/// or right edge. RTL is re-applied only *inside* the constrained frame, around
-/// the actual app content. Layout-only — no branding/feature/chat changes.
+/// Sizes the outer shell to the REAL viewport via [MediaQuery.sizeOf] instead
+/// of relying on incoming box constraints (which can already be narrow and
+/// leave the frame stuck to one edge on iPad Safari). A max [maxWidth] mobile
+/// frame is centered inside the full viewport.
+///
+/// The outer layout is forced to LTR so the app's Arabic RTL direction never
+/// pushes the frame off-center; RTL is re-applied only inside the frame around
+/// the app content. Layout-only — no branding/feature/chat changes.
 class ResponsiveMobileShell extends StatelessWidget {
   const ResponsiveMobileShell({
     super.key,
@@ -25,32 +29,33 @@ class ResponsiveMobileShell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Real viewport size — full width/height of the browser window.
+    final size = MediaQuery.sizeOf(context);
+    final frameWidth = size.width < maxWidth ? size.width : maxWidth;
+
     return Directionality(
       // Neutral outer direction so centering is never affected by RTL.
       textDirection: TextDirection.ltr,
-      child: ColoredBox(
-        color: _backdrop,
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            // Full width on small phones; clamped + centered on wide screens.
-            final width = constraints.maxWidth < maxWidth
-                ? constraints.maxWidth
-                : maxWidth;
-            return Center(
-              // Alignment.center (direction-agnostic) — exact horizontal center.
-              child: SizedBox(
-                width: width,
-                height: constraints.maxHeight,
-                child: ClipRect(
-                  // Arabic RTL applies only inside the app content.
-                  child: Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: child,
-                  ),
+      child: SizedBox(
+        width: size.width,
+        height: size.height,
+        child: ColoredBox(
+          color: _backdrop,
+          child: Align(
+            // Horizontally centered, top-aligned mobile frame.
+            alignment: Alignment.topCenter,
+            child: SizedBox(
+              width: frameWidth,
+              height: size.height,
+              child: ClipRect(
+                // Arabic RTL applies only inside the app content.
+                child: Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: child,
                 ),
               ),
-            );
-          },
+            ),
+          ),
         ),
       ),
     );
