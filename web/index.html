@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="ltr">
 <head>
   <!-- The base href is rewritten at build time via `flutter build web --base-href`. -->
   <base href="$FLUTTER_BASE_HREF">
@@ -25,10 +25,35 @@
   <title>ODDEM</title>
 
   <style>
-    html, body { height: 100%; margin: 0; background-color: #1E3246; }
+    /* Keep the web document LTR so the Flutter host is never shifted by RTL.
+       Arabic RTL is applied inside the Flutter app only. */
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background-color: #F3F4F6;
+    }
+
+    body {
+      direction: ltr;
+    }
+
+    flutter-view,
+    flt-glass-pane,
+    flt-scene-host,
+    flt-semantics-host {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    /* Branded loading splash (own navy background so it stays visible on the
+       light page background). */
     #loading {
       position: fixed; inset: 0; display: flex; align-items: center;
       justify-content: center; flex-direction: column; color: #FFFFFF;
+      background-color: #1E3246;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     #loading .dot {
