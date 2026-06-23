@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../core/constants/app_constants.dart';
 import '../features/account/presentation/account_screen.dart';
+import '../features/ai_designer/presentation/ai_chat_screen.dart';
 import '../features/ai_designer/presentation/ai_designer_screen.dart';
 import '../features/ai_designer/presentation/room_dimensions_screen.dart';
 import '../features/ai_designer/presentation/room_photo_upload_screen.dart';
@@ -95,6 +96,11 @@ final appRouter = GoRouter(
       parentNavigatorKey: _rootKey,
       builder: (_, state) =>
           ProductDetailScreen(productId: state.pathParameters['id']!),
+    ),
+    GoRoute(
+      path: AppRoutes.aiChat,
+      parentNavigatorKey: _rootKey,
+      builder: (_, __) => const AiChatScreen(),
     ),
     GoRoute(
       path: AppRoutes.roomPhotoUpload,

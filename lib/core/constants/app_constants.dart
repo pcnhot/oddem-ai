@@ -58,6 +58,7 @@ class AppRoutes {
   static const String catalog = '/catalog';
   static const String productDetail = '/product'; // /product/:id
   static const String aiDesigner = '/ai-designer';
+  static const String aiChat = '/ai-designer/chat';
   static const String roomPhotoUpload = '/ai-designer/photo';
   static const String roomDimensions = '/ai-designer/dimensions';
   static const String planner2d = '/planner';

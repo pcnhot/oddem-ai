@@ -22,12 +22,22 @@ class AiDesignerScreen extends ConsumerWidget {
       appBar: AppBar(
         title: const Text('المصمم بالذكاء الاصطناعي'),
         automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            tooltip: 'محادثة مع المصمم',
+            icon: const Icon(Icons.chat_bubble_outline),
+            onPressed: () => context.push(AppRoutes.aiChat),
+          ),
+        ],
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           Text('أخبرنا عن غرفتك وسنقترح لك تصميمًا متكاملاً',
               style: AppTextStyles.bodyMuted),
+          const SizedBox(height: 16),
+
+          _ChatEntryCard(onTap: () => context.push(AppRoutes.aiChat)),
           const SizedBox(height: 16),
 
           Text('نوع الغرفة', style: AppTextStyles.subtitle),
@@ -195,6 +205,55 @@ class AiDesignerScreen extends ConsumerWidget {
             onSelected: (_) => onSelected(o),
           ),
       ],
+    );
+  }
+}
+
+/// Entry point to the local mock chat with the ODDEM designer.
+class _ChatEntryCard extends StatelessWidget {
+  const _ChatEntryCard({required this.onTap});
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(16),
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: AppColors.border),
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: 44,
+              height: 44,
+              decoration: BoxDecoration(
+                color: AppColors.primary,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Icon(Icons.chat_bubble_outline,
+                  color: AppColors.white, size: 22),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('محادثة مع مصمم ODDEM', style: AppTextStyles.subtitle),
+                  const SizedBox(height: 2),
+                  Text('اسأل المصمم واحصل على اقتراحات فورية',
+                      style: AppTextStyles.caption),
+                ],
+              ),
+            ),
+            const Icon(Icons.chevron_left, color: AppColors.midGrey),
+          ],
+        ),
+      ),
     );
   }
 }
