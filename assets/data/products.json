@@ -1,211 +1,255 @@
 {
-  "version": "0.1",
+  "version": "0.2-real-ikea-seed",
   "generatedAt": "2026-06-23",
-  "note": "Seed sample data for the Odem product pipeline. Schema is IKEA-ready: replace the items below with curated IKEA Saudi products (same fields). 'source'/'productUrl'/'titleEn' are internal provenance and are never shown to users. Leave 'images' empty to use the Odem placeholder, or set local filenames (e.g. 'ikea_liv_01.jpg') after dropping the files into assets/images/.",
+  "note": "Curated public IKEA Saudi Arabia living-room sofa data. Images intentionally empty for now; add local filenames later after image pack is prepared. Arabic titles/descriptions are Odem-friendly translations of the English public product data.",
   "products": [
     {
-      "id": "liv_01",
-      "source": "odem_seed",
-      "productUrl": "",
-      "sku": "ODM-LIV-001",
-      "titleAr": "كنبة ٣ مقاعد — قماش",
-      "titleEn": "3-seat fabric sofa",
-      "descriptionAr": "كنبة مريحة بثلاثة مقاعد وقماش متين سهل التنظيف، مثالية لغرفة المعيشة.",
-      "price": 2199,
-      "oldPrice": 2699,
+      "id": "ikea_liv_01",
+      "source": "ikea_sa",
+      "productUrl": "https://www.ikea.com/sa/en/p/ektorp-3-seat-sofa-hakebo-grey-green-s59509001/",
+      "sku": "595.090.01",
+      "titleAr": "EKTORP كنبة ٣ مقاعد، هاكيبو رمادي مخضر",
+      "titleEn": "EKTORP 3-seat sofa, Hakebo grey-green",
+      "descriptionAr": "كنبة بتصميم كلاسيكي ووسائد سميكة مريحة، بغطاء ناعم قابل للإزالة والغسل.",
+      "price": 1745,
+      "oldPrice": 2095,
       "currency": "SAR",
       "images": [],
       "category": "sofas",
       "roomType": "غرفة معيشة",
-      "dimensions": { "widthCm": 218, "depthCm": 90, "heightCm": 88 },
+      "dimensions": {
+        "widthCm": 218,
+        "depthCm": 88,
+        "heightCm": 88
+      },
       "colors": [
-        { "name": "بيج", "hex": "#EAD7CB" },
-        { "name": "رمادي", "hex": "#8C8674" }
+        {
+          "name": "رمادي مخضر",
+          "hex": "#737B4D"
+        }
       ],
-      "material": "قماش بوليستر + هيكل خشب",
+      "material": "قماش بوليستر معاد تدويره + خشب/فوم/ألواح خشبية",
       "availability": "in_stock",
-      "seller": "Odem Selection",
-      "style": "حديث",
-      "rating": 4.5,
-      "reviewCount": 86
+      "seller": "IKEA Saudi Arabia",
+      "rating": 0,
+      "reviewCount": 0
     },
     {
-      "id": "liv_02",
-      "source": "odem_seed",
-      "productUrl": "",
-      "sku": "ODM-LIV-002",
-      "titleAr": "كنبة زاوية — ٥ مقاعد",
-      "titleEn": "Corner sofa, 5-seat",
-      "descriptionAr": "كنبة زاوية واسعة تتسع للعائلة، بإسفنج عالي الكثافة وقماش ناعم.",
-      "price": 3899,
+      "id": "ikea_liv_02",
+      "source": "ikea_sa",
+      "productUrl": "https://www.ikea.com/sa/en/p/hyltarp-3-seat-sofa-gransel-natural-s79489634/",
+      "sku": "794.896.34",
+      "titleAr": "HYLTARP كنبة ٣ مقاعد، جرانسل طبيعي",
+      "titleEn": "HYLTARP 3-seat sofa, Gransel natural",
+      "descriptionAr": "كنبة عائلية مريحة بتصميم كلاسيكي وخطوط نظيفة، بغطاء قابل للغسل.",
+      "price": 3295,
       "oldPrice": null,
       "currency": "SAR",
       "images": [],
       "category": "sofas",
       "roomType": "غرفة معيشة",
-      "dimensions": { "widthCm": 300, "depthCm": 165, "heightCm": 84 },
+      "dimensions": {
+        "widthCm": 232,
+        "depthCm": 93,
+        "heightCm": 91
+      },
       "colors": [
-        { "name": "رمادي داكن", "hex": "#3F4630" }
+        {
+          "name": "طبيعي",
+          "hex": "#EAD7CB"
+        }
       ],
-      "material": "قماش كتان + هيكل خشب زان",
+      "material": "قماش جرانسل مع عناصر كتان وفيسكوز + خشب/فوم/نوابض",
       "availability": "in_stock",
-      "seller": "Odem Selection",
-      "style": "حديث",
-      "rating": 4.6,
-      "reviewCount": 132
+      "seller": "IKEA Saudi Arabia",
+      "rating": 0,
+      "reviewCount": 0
     },
     {
-      "id": "liv_03",
-      "source": "odem_seed",
-      "productUrl": "",
-      "sku": "ODM-LIV-003",
-      "titleAr": "كرسي بذراعين",
-      "titleEn": "Armchair",
-      "descriptionAr": "كرسي مريح بذراعين وتصميم بسيط يناسب ركن القراءة أو غرفة المعيشة.",
-      "price": 949,
-      "oldPrice": 1199,
-      "currency": "SAR",
-      "images": [],
-      "category": "armchair",
-      "roomType": "غرفة معيشة",
-      "dimensions": { "widthCm": 78, "depthCm": 82, "heightCm": 90 },
-      "colors": [
-        { "name": "أخضر زيتي", "hex": "#737B4D" },
-        { "name": "بيج", "hex": "#EAD7CB" }
-      ],
-      "material": "قماش + أرجل خشب",
-      "availability": "in_stock",
-      "seller": "Odem Selection",
-      "style": "بسيط (مينيمال)",
-      "rating": 4.3,
-      "reviewCount": 54
-    },
-    {
-      "id": "liv_04",
-      "source": "odem_seed",
-      "productUrl": "",
-      "sku": "ODM-LIV-004",
-      "titleAr": "طاولة قهوة خشبية",
-      "titleEn": "Coffee table",
-      "descriptionAr": "طاولة قهوة بسطح خشبي دافئ ورف سفلي للتخزين.",
-      "price": 599,
+      "id": "ikea_liv_03",
+      "source": "ikea_sa",
+      "productUrl": "https://www.ikea.com/sa/en/p/saltmyran-2-seat-sofa-oereryd-grey-beige-10596995/",
+      "sku": "105.969.95",
+      "titleAr": "SALTMYRAN كنبة مقعدين، أوريريد رمادي بيج",
+      "titleEn": "SALTMYRAN 2-seat sofa, Öreryd grey-beige",
+      "descriptionAr": "كنبة نحيفة بتفاصيل مدروسة مناسبة للمساحات الصغيرة وغرف المعيشة الهادئة.",
+      "price": 899,
       "oldPrice": null,
       "currency": "SAR",
       "images": [],
-      "category": "coffee_table",
+      "category": "sofas",
       "roomType": "غرفة معيشة",
-      "dimensions": { "widthCm": 110, "depthCm": 60, "heightCm": 45 },
+      "dimensions": {
+        "widthCm": 147,
+        "depthCm": 79,
+        "heightCm": 77
+      },
       "colors": [
-        { "name": "بني فاتح", "hex": "#A25033" }
+        {
+          "name": "رمادي بيج",
+          "hex": "#A9A092"
+        }
       ],
-      "material": "خشب بلوط",
+      "material": "قماش بوليستر معاد تدويره + خشب/ألواح/فوم + فولاذ",
       "availability": "in_stock",
-      "seller": "Odem Selection",
-      "style": "بسيط (مينيمال)",
-      "rating": 4.2,
-      "reviewCount": 39
+      "seller": "IKEA Saudi Arabia",
+      "rating": 0,
+      "reviewCount": 0
     },
     {
-      "id": "liv_05",
-      "source": "odem_seed",
-      "productUrl": "",
-      "sku": "ODM-LIV-005",
-      "titleAr": "وحدة تلفزيون",
-      "titleEn": "TV unit",
-      "descriptionAr": "وحدة تلفزيون عملية بأدراج وأرفف مفتوحة لتنظيم غرفة المعيشة.",
-      "price": 1299,
-      "oldPrice": 1599,
-      "currency": "SAR",
-      "images": [],
-      "category": "tv_unit",
-      "roomType": "غرفة معيشة",
-      "dimensions": { "widthCm": 180, "depthCm": 40, "heightCm": 50 },
-      "colors": [
-        { "name": "أبيض", "hex": "#FFFFFF" },
-        { "name": "رمادي", "hex": "#8C8674" }
-      ],
-      "material": "خشب MDF",
-      "availability": "in_stock",
-      "seller": "Odem Selection",
-      "style": "حديث",
-      "rating": 4.4,
-      "reviewCount": 71
-    },
-    {
-      "id": "liv_06",
-      "source": "odem_seed",
-      "productUrl": "",
-      "sku": "ODM-LIV-006",
-      "titleAr": "مصباح أرضي",
-      "titleEn": "Floor lamp",
-      "descriptionAr": "مصباح أرضي بإضاءة دافئة وذراع قابل للتعديل لإضفاء أجواء هادئة.",
-      "price": 449,
-      "oldPrice": null,
-      "currency": "SAR",
-      "images": [],
-      "category": "lighting",
-      "roomType": "غرفة معيشة",
-      "dimensions": { "widthCm": 30, "depthCm": 30, "heightCm": 160 },
-      "colors": [
-        { "name": "أخضر زيتي", "hex": "#737B4D" }
-      ],
-      "material": "معدن مطلي + قماش",
-      "availability": "in_stock",
-      "seller": "Odem Selection",
-      "style": "حديث",
-      "rating": 4.1,
-      "reviewCount": 28
-    },
-    {
-      "id": "liv_07",
-      "source": "odem_seed",
-      "productUrl": "",
-      "sku": "ODM-LIV-007",
-      "titleAr": "سجادة غرفة معيشة",
-      "titleEn": "Area rug",
-      "descriptionAr": "سجادة ناعمة بألوان ترابية هادئة تضيف دفئًا للمساحة.",
+      "id": "ikea_liv_04",
+      "source": "ikea_sa",
+      "productUrl": "https://www.ikea.com/sa/en/p/glostad-2-seat-sofa-knisa-dark-grey-50489012/",
+      "sku": "504.890.12",
+      "titleAr": "GLOSTAD كنبة مقعدين، كنيسا رمادي داكن",
+      "titleEn": "GLOSTAD 2-seat sofa, Knisa dark grey",
+      "descriptionAr": "كنبة صغيرة وخفيفة سهلة النقل والتركيب، مناسبة للمساحات المحدودة.",
       "price": 799,
-      "oldPrice": 999,
-      "currency": "SAR",
-      "images": [],
-      "category": "rug",
-      "roomType": "غرفة معيشة",
-      "dimensions": { "widthCm": 240, "depthCm": 170, "heightCm": 2 },
-      "colors": [
-        { "name": "بيج", "hex": "#EAD7CB" },
-        { "name": "أخضر زيتي", "hex": "#737B4D" }
-      ],
-      "material": "صوف صناعي",
-      "availability": "in_stock",
-      "seller": "Odem Selection",
-      "style": "بوهيمي",
-      "rating": 4.0,
-      "reviewCount": 22
-    },
-    {
-      "id": "liv_08",
-      "source": "odem_seed",
-      "productUrl": "",
-      "sku": "ODM-LIV-008",
-      "titleAr": "طاولة جانبية",
-      "titleEn": "Side table",
-      "descriptionAr": "طاولة جانبية صغيرة عملية بجانب الكنبة أو السرير.",
-      "price": 249,
       "oldPrice": null,
       "currency": "SAR",
       "images": [],
-      "category": "side_table",
+      "category": "sofas",
       "roomType": "غرفة معيشة",
-      "dimensions": { "widthCm": 45, "depthCm": 45, "heightCm": 50 },
+      "dimensions": {
+        "widthCm": 121,
+        "depthCm": 78,
+        "heightCm": 68
+      },
       "colors": [
-        { "name": "أسود", "hex": "#3F4630" }
+        {
+          "name": "رمادي داكن",
+          "hex": "#3F3F3F"
+        }
       ],
-      "material": "معدن + خشب",
-      "availability": "out_of_stock",
-      "seller": "Odem Selection",
-      "style": "صناعي",
-      "rating": 3.9,
-      "reviewCount": 15
+      "material": "قماش بوليستر + إطار فولاذ/خشب رقائقي + فوم",
+      "availability": "in_stock",
+      "seller": "IKEA Saudi Arabia",
+      "rating": 4.6,
+      "reviewCount": 25
+    },
+    {
+      "id": "ikea_liv_05",
+      "source": "ikea_sa",
+      "productUrl": "https://www.ikea.com/sa/en/p/ektorp-3-seat-sofa-with-chaise-longue-hakebo-grey-green-s29509031/",
+      "sku": "295.090.31",
+      "titleAr": "EKTORP كنبة ٣ مقاعد مع شيزلونج، هاكيبو رمادي مخضر",
+      "titleEn": "EKTORP 3-seat sofa with chaise longue, Hakebo grey-green",
+      "descriptionAr": "كنبة بثلاثة مقاعد مع شيزلونج ووسائد مريحة، مناسبة لغرفة معيشة عائلية.",
+      "price": 3295,
+      "oldPrice": null,
+      "currency": "SAR",
+      "images": [],
+      "category": "sofas",
+      "roomType": "غرفة معيشة",
+      "dimensions": {
+        "widthCm": 252,
+        "depthCm": 163,
+        "heightCm": 88
+      },
+      "colors": [
+        {
+          "name": "رمادي مخضر",
+          "hex": "#737B4D"
+        }
+      ],
+      "material": "قماش هاكيبو + إطار خشبي/فوم/ألياف بوليستر",
+      "availability": "in_stock",
+      "seller": "IKEA Saudi Arabia",
+      "rating": 0,
+      "reviewCount": 0
+    },
+    {
+      "id": "ikea_liv_06",
+      "source": "ikea_sa",
+      "productUrl": "https://www.ikea.com/sa/en/p/kivik-3-seat-sofa-tibbleby-beige-grey-s49440597/",
+      "sku": "494.405.97",
+      "titleAr": "KIVIK كنبة ٣ مقاعد، تيبليبي بيج/رمادي",
+      "titleEn": "KIVIK 3-seat sofa, Tibbleby beige/grey",
+      "descriptionAr": "كنبة واسعة ومريحة بذرّاعات منخفضة ونوابض جيبية وفوم يتكيف مع الجسم.",
+      "price": 2395,
+      "oldPrice": null,
+      "currency": "SAR",
+      "images": [],
+      "category": "sofas",
+      "roomType": "غرفة معيشة",
+      "dimensions": {
+        "widthCm": 228,
+        "depthCm": 95,
+        "heightCm": 83
+      },
+      "colors": [
+        {
+          "name": "بيج/رمادي",
+          "hex": "#A9A092"
+        }
+      ],
+      "material": "قماش بوليستر بنقشة هيرنغبون + نوابض جيبية + فوم",
+      "availability": "in_stock",
+      "seller": "IKEA Saudi Arabia",
+      "rating": 0,
+      "reviewCount": 0
+    },
+    {
+      "id": "ikea_liv_07",
+      "source": "ikea_sa",
+      "productUrl": "https://www.ikea.com/sa/en/p/glostad-3-seat-sofa-knisa-dark-grey-40573285/",
+      "sku": "405.732.85",
+      "titleAr": "GLOSTAD كنبة ٣ مقاعد، كنيسا رمادي داكن",
+      "titleEn": "GLOSTAD 3-seat sofa, Knisa dark grey",
+      "descriptionAr": "كنبة بتصميم بسيط ووسائد سميكة وذرّاعات مبطنة، سهلة التركيب ومناسبة للاستخدام اليومي.",
+      "price": 899,
+      "oldPrice": null,
+      "currency": "SAR",
+      "images": [],
+      "category": "sofas",
+      "roomType": "غرفة معيشة",
+      "dimensions": {
+        "widthCm": 171,
+        "depthCm": 78,
+        "heightCm": 68
+      },
+      "colors": [
+        {
+          "name": "رمادي داكن",
+          "hex": "#3F3F3F"
+        }
+      ],
+      "material": "قماش بوليستر + إطار فولاذ/خشب رقائقي + فوم",
+      "availability": "in_stock",
+      "seller": "IKEA Saudi Arabia",
+      "rating": 0,
+      "reviewCount": 0
+    },
+    {
+      "id": "ikea_liv_08",
+      "source": "ikea_sa",
+      "productUrl": "https://www.ikea.com/sa/en/p/rocksjoen-2-seat-sofa-kilanda-light-beige-s59508860/",
+      "sku": "595.088.60",
+      "titleAr": "ROCKSJÖN كنبة مقعدين، كيلاندا بيج فاتح",
+      "titleEn": "ROCKSJÖN 2-seat sofa, Kilanda light beige",
+      "descriptionAr": "كنبة بحجم أنيق وتصميم تقليدي بسيط، مناسبة للمساحات الضيقة.",
+      "price": 1095,
+      "oldPrice": null,
+      "currency": "SAR",
+      "images": [],
+      "category": "sofas",
+      "roomType": "غرفة معيشة",
+      "dimensions": {
+        "widthCm": 142,
+        "depthCm": 77,
+        "heightCm": 80
+      },
+      "colors": [
+        {
+          "name": "بيج فاتح",
+          "hex": "#EAD7CB"
+        }
+      ],
+      "material": "قماش بوليستر + إطار خشب/ألواح/فوم + أرجل زان",
+      "availability": "in_stock",
+      "seller": "IKEA Saudi Arabia",
+      "rating": 0,
+      "reviewCount": 0
     }
   ]
 }
