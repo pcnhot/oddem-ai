@@ -49,6 +49,10 @@ jobs:
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          # Enable Pages (source = GitHub Actions) on first run instead of
+          # only querying an existing site, which 404s on a fresh repo.
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
