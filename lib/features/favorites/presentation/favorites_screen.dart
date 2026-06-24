@@ -45,8 +45,8 @@ class FavoritesScreen extends ConsumerWidget {
             ),
             itemBuilder: (_, i) => ProductCard(
               product: favorites[i],
-              onTap: () => context
-                  .push('${AppRoutes.productDetail}/${favorites[i].id}'),
+              onTap: () =>
+                  context.push('${AppRoutes.productDetail}/${favorites[i].id}'),
             ),
           );
         },

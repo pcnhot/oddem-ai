@@ -22,9 +22,8 @@ class Formatters {
     required double depthCm,
     required double heightCm,
   }) {
-    String n(double v) => v == v.roundToDouble()
-        ? v.toStringAsFixed(0)
-        : v.toStringAsFixed(1);
+    String n(double v) =>
+        v == v.roundToDouble() ? v.toStringAsFixed(0) : v.toStringAsFixed(1);
     return '${n(widthCm)} × ${n(depthCm)} × ${n(heightCm)} سم';
   }
 }

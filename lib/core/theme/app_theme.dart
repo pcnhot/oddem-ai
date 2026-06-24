@@ -104,8 +104,7 @@ class AppTheme {
         labelStyle: AppTextStyles.caption.copyWith(color: AppColors.navy),
         secondaryLabelStyle:
             AppTextStyles.caption.copyWith(color: AppColors.white),
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       ),
       dividerTheme: const DividerThemeData(
         color: AppColors.divider,

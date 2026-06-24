@@ -33,14 +33,12 @@ class AiDesignerScreen extends ConsumerWidget {
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 28),
         children: [
-          Text('أخبرنا عن غرفتك وسنقترح لك تصميمًا متكاملاً',
+          const Text('أخبرنا عن غرفتك وسنقترح لك تصميمًا متكاملاً',
               style: AppTextStyles.bodyMuted),
           const SizedBox(height: 16),
-
           _ChatEntryCard(onTap: () => context.push(AppRoutes.aiChat)),
           const SizedBox(height: 20),
-
-          Text('نوع الغرفة', style: AppTextStyles.subtitle),
+          const Text('نوع الغرفة', style: AppTextStyles.subtitle),
           const SizedBox(height: 10),
           _wrapChoices(
             options: AppConstants.roomTypes,
@@ -49,7 +47,7 @@ class AiDesignerScreen extends ConsumerWidget {
                 request.copyWith(roomType: v),
           ),
           const SizedBox(height: 20),
-          Text('الطراز', style: AppTextStyles.subtitle),
+          const Text('الطراز', style: AppTextStyles.subtitle),
           const SizedBox(height: 10),
           _wrapChoices(
             options: AppConstants.designStyles,
@@ -58,7 +56,6 @@ class AiDesignerScreen extends ConsumerWidget {
                 request.copyWith(style: v),
           ),
           const SizedBox(height: 24),
-
           Text('الميزانية: ${request.budget.toStringAsFixed(0)} ر.س',
               style: AppTextStyles.subtitle),
           const SizedBox(height: 4),
@@ -73,7 +70,6 @@ class AiDesignerScreen extends ConsumerWidget {
                 request.copyWith(budget: v),
           ),
           const SizedBox(height: 8),
-
           Row(
             children: [
               Expanded(
@@ -98,10 +94,8 @@ class AiDesignerScreen extends ConsumerWidget {
             ],
           ),
           const SizedBox(height: 12),
-
           _StrictModeCard(),
           const SizedBox(height: 16),
-
           ElevatedButton.icon(
             onPressed: result.isLoading
                 ? null
@@ -119,7 +113,6 @@ class AiDesignerScreen extends ConsumerWidget {
             label: Text(result.isLoading ? 'جارٍ التصميم...' : 'أنشئ التصميم'),
           ),
           const SizedBox(height: 24),
-
           result.when(
             data: (data) {
               if (data == null) return const SizedBox();
@@ -181,8 +174,7 @@ class AiDesignerScreen extends ConsumerWidget {
             },
             loading: () => const SizedBox(),
             error: (_, __) => Text('تعذّر إنشاء التصميم، حاول مجددًا',
-                style: AppTextStyles.caption
-                    .copyWith(color: AppColors.error)),
+                style: AppTextStyles.caption.copyWith(color: AppColors.error)),
           ),
         ],
       ),
@@ -239,12 +231,12 @@ class _ChatEntryCard extends StatelessWidget {
                   color: AppColors.white, size: 22),
             ),
             const SizedBox(width: 12),
-            Expanded(
+            const Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('محادثة مع مصمم Odem', style: AppTextStyles.subtitle),
-                  const SizedBox(height: 2),
+                  SizedBox(height: 2),
                   Text('اسأل المصمم واحصل على اقتراحات فورية',
                       style: AppTextStyles.caption),
                 ],

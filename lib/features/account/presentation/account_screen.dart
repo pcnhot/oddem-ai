@@ -77,9 +77,9 @@ class AccountScreen extends ConsumerWidget {
             ),
           ),
           const SizedBox(height: 24),
-          Center(
-            child: Text('الإصدار 0.1.0 — السعودية',
-                style: AppTextStyles.caption),
+          const Center(
+            child:
+                Text('الإصدار 0.1.0 — السعودية', style: AppTextStyles.caption),
           ),
           const SizedBox(height: 24),
         ],

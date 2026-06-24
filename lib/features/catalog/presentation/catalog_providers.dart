@@ -33,8 +33,7 @@ final productListProvider = FutureProvider<List<Product>>((ref) {
       .getProducts(categoryId: categoryId, query: query);
 });
 
-final productByIdProvider =
-    FutureProvider.family<Product?, String>((ref, id) {
+final productByIdProvider = FutureProvider.family<Product?, String>((ref, id) {
   return ref.watch(catalogRepositoryProvider).getProductById(id);
 });
 

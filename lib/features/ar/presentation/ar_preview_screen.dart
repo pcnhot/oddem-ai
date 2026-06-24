@@ -72,9 +72,11 @@ class ArPreviewScreen extends StatelessWidget {
                   color: AppColors.white.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: Column(
-                  children: const [
-                    _Step(number: '1', text: 'حرّك الجوال على الأرض حتى تظهر النقطة'),
+                child: const Column(
+                  children: [
+                    _Step(
+                        number: '1',
+                        text: 'حرّك الجوال على الأرض حتى تظهر النقطة'),
                     SizedBox(height: 12),
                     _Step(number: '2', text: 'اضغط لوضع المنتج في مكانه'),
                     SizedBox(height: 12),

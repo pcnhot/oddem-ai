@@ -27,8 +27,7 @@ void main() {
     });
 
     test('effective price honours discount', () {
-      final discounted =
-          MockData.products.firstWhere((p) => p.hasDiscount);
+      final discounted = MockData.products.firstWhere((p) => p.hasDiscount);
       expect(discounted.effectivePrice, discounted.discountPrice);
     });
   });

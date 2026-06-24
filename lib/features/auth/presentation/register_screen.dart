@@ -53,10 +53,11 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text('انضم إلى ${AppConstants.appName}',
+                const Text('انضم إلى ${AppConstants.appName}',
                     style: AppTextStyles.headline),
                 const SizedBox(height: 6),
-                Text('أنشئ حسابك لتبدأ التسوّق والتصميم بالذكاء الاصطناعي',
+                const Text(
+                    'أنشئ حسابك لتبدأ التسوّق والتصميم بالذكاء الاصطناعي',
                     style: AppTextStyles.bodyMuted),
                 const SizedBox(height: 24),
                 TextFormField(

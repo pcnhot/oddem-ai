@@ -50,8 +50,7 @@ class AiChatController extends StateNotifier<AiChatState> {
       isTyping: true,
     );
 
-    final replyText =
-        await _repo.reply(trimmed, history: state.messages);
+    final replyText = await _repo.reply(trimmed, history: state.messages);
 
     final reply = ChatMessage(
       role: ChatRole.assistant,

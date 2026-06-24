@@ -47,7 +47,8 @@ class _SplashScreenState extends State<SplashScreen> {
             const SizedBox(height: 28),
             Text(
               'تصميم يناسب غرفتك',
-              style: AppTextStyles.bodyMuted.copyWith(color: AppColors.lightGrey),
+              style:
+                  AppTextStyles.bodyMuted.copyWith(color: AppColors.lightGrey),
             ),
             const SizedBox(height: 36),
             const SizedBox(
