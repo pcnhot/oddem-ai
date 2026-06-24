@@ -47,7 +47,7 @@ class OrderConfirmationScreen extends ConsumerWidget {
                     ),
                   ),
                   const SizedBox(height: 24),
-                  Text('تم استلام طلبك بنجاح',
+                  const Text('تم استلام طلبك بنجاح',
                       textAlign: TextAlign.center,
                       style: AppTextStyles.headline),
                   const SizedBox(height: 8),

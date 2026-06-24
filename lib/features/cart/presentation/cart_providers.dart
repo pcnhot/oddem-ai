@@ -14,8 +14,8 @@ class CartNotifier extends StateNotifier<List<CartItem>> {
     );
     if (index >= 0) {
       final updated = [...state];
-      updated[index] = updated[index]
-          .copyWith(quantity: updated[index].quantity + quantity);
+      updated[index] =
+          updated[index].copyWith(quantity: updated[index].quantity + quantity);
       state = updated;
     } else {
       state = [
@@ -53,8 +53,8 @@ class CartNotifier extends StateNotifier<List<CartItem>> {
   void clear() => state = const <CartItem>[];
 }
 
-final cartProvider =
-    StateNotifierProvider<CartNotifier, List<CartItem>>((ref) => CartNotifier());
+final cartProvider = StateNotifierProvider<CartNotifier, List<CartItem>>(
+    (ref) => CartNotifier());
 
 final cartCountProvider = Provider<int>((ref) {
   return ref.watch(cartProvider).fold<int>(0, (sum, i) => sum + i.quantity);

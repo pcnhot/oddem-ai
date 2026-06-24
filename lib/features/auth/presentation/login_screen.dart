@@ -50,7 +50,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             return SingleChildScrollView(
               padding: const EdgeInsets.fromLTRB(24, 16, 24, 24),
               child: ConstrainedBox(
-                constraints: BoxConstraints(minHeight: constraints.maxHeight - 40),
+                constraints:
+                    BoxConstraints(minHeight: constraints.maxHeight - 40),
                 child: Form(
                   key: _formKey,
                   child: Column(
@@ -59,11 +60,11 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     children: [
                       const _BrandHeader(),
                       const SizedBox(height: 28),
-                      Text('مرحبًا بك في ${AppConstants.appName}',
+                      const Text('مرحبًا بك في ${AppConstants.appName}',
                           textAlign: TextAlign.center,
                           style: AppTextStyles.headline),
                       const SizedBox(height: 6),
-                      Text('سجّل الدخول لمتابعة التسوّق والتصميم',
+                      const Text('سجّل الدخول لمتابعة التسوّق والتصميم',
                           textAlign: TextAlign.center,
                           style: AppTextStyles.bodyMuted),
                       const SizedBox(height: 28),
@@ -86,8 +87,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                           labelText: 'كلمة المرور',
                           prefixIcon: Icon(Icons.lock_outline),
                         ),
-                        validator: (v) =>
-                            (v == null || v.length < 4) ? 'كلمة مرور قصيرة' : null,
+                        validator: (v) => (v == null || v.length < 4)
+                            ? 'كلمة مرور قصيرة'
+                            : null,
                       ),
                       Align(
                         alignment: AlignmentDirectional.centerStart,

@@ -49,8 +49,7 @@ class _RoomDimensionsScreenState extends ConsumerState<RoomDimensionsScreen> {
       heightM: double.parse(_height.text),
     );
     final req = ref.read(aiRequestProvider);
-    ref.read(aiRequestProvider.notifier).state =
-        req.copyWith(dimensions: dims);
+    ref.read(aiRequestProvider.notifier).state = req.copyWith(dimensions: dims);
     context.pop();
   }
 
@@ -63,7 +62,8 @@ class _RoomDimensionsScreenState extends ConsumerState<RoomDimensionsScreen> {
         child: ListView(
           padding: const EdgeInsets.all(20),
           children: [
-            Text('أدخل أبعاد الغرفة بالأمتار لمساعدة المصمم على توزيع القطع.',
+            const Text(
+                'أدخل أبعاد الغرفة بالأمتار لمساعدة المصمم على توزيع القطع.',
                 style: AppTextStyles.bodyMuted),
             const SizedBox(height: 24),
             _field(_length, 'الطول (م)', Icons.straighten),

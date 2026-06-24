@@ -54,10 +54,10 @@ class HelpScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
               border: Border.all(color: AppColors.border),
             ),
-            child: Row(
+            child: const Row(
               children: [
-                const Icon(Icons.support_agent, color: AppColors.primary),
-                const SizedBox(width: 12),
+                Icon(Icons.support_agent, color: AppColors.primary),
+                SizedBox(width: 12),
                 Expanded(
                   child: Text('تواصل معنا: support@odemfurniture.com',
                       style: AppTextStyles.body),
@@ -90,8 +90,7 @@ class HelpScreen extends StatelessWidget {
                 ExpansionTile(
                   shape: const Border(),
                   title: Text(items[i].q, style: AppTextStyles.subtitle),
-                  childrenPadding:
-                      const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                  childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
                   expandedAlignment: Alignment.centerRight,
                   expandedCrossAxisAlignment: CrossAxisAlignment.start,
                   children: [

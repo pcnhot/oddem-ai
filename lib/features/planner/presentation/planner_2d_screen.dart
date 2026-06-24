@@ -37,7 +37,7 @@ class Planner2DScreen extends StatelessWidget {
                         const Icon(Icons.grid_on,
                             size: 64, color: AppColors.midGrey),
                         const SizedBox(height: 12),
-                        Text('مخطط ثنائي الأبعاد — قريبًا',
+                        const Text('مخطط ثنائي الأبعاد — قريبًا',
                             style: AppTextStyles.subtitle),
                         const SizedBox(height: 6),
                         Text(
@@ -93,10 +93,10 @@ class _ComingSoonNote extends StatelessWidget {
         borderRadius: BorderRadius.circular(14),
         border: Border.all(color: AppColors.border),
       ),
-      child: Row(
+      child: const Row(
         children: [
-          const Icon(Icons.info_outline, color: AppColors.navy),
-          const SizedBox(width: 10),
+          Icon(Icons.info_outline, color: AppColors.navy),
+          SizedBox(width: 10),
           Expanded(
             child: Text(
               'هذه ميزة تجريبية ضمن النسخة الأولى وسيتم تفعيل السحب والإفلات لاحقًا.',

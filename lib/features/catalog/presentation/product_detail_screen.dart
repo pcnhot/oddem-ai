@@ -143,7 +143,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                       error: (_, __) => const SizedBox(),
                     ),
                     const SizedBox(height: 16),
-                    Text('الوصف', style: AppTextStyles.subtitle),
+                    const Text('الوصف', style: AppTextStyles.subtitle),
                     const SizedBox(height: 6),
                     Text(product.description, style: AppTextStyles.bodyMuted),
                     const SizedBox(height: 20),
@@ -159,13 +159,15 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                       ),
                       const SizedBox(height: 20),
                     ],
-                    Text('المواصفات', style: AppTextStyles.subtitle),
+                    const Text('المواصفات', style: AppTextStyles.subtitle),
                     const SizedBox(height: 10),
-                    _spec('الأبعاد', Formatters.dimensions(
-                      widthCm: product.dimensions.widthCm,
-                      depthCm: product.dimensions.depthCm,
-                      heightCm: product.dimensions.heightCm,
-                    )),
+                    _spec(
+                        'الأبعاد',
+                        Formatters.dimensions(
+                          widthCm: product.dimensions.widthCm,
+                          depthCm: product.dimensions.depthCm,
+                          heightCm: product.dimensions.heightCm,
+                        )),
                     _spec('الخامة', product.material),
                     _spec('المخزون', '${product.stock} قطعة'),
                     const SizedBox(height: 20),
@@ -275,7 +277,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                 onPressed: product.inStock
                     ? () {
                         ref.read(cartProvider.notifier).add(
-                              product as Product,
+                              product,
                               color: color,
                             );
                         ScaffoldMessenger.of(context).showSnackBar(

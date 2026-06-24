@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_text_styles.dart';
-import '../../../shared/models/chat_message.dart';
 import 'ai_chat_providers.dart';
 
 /// Local mock chat with the ODDEM designer. Type Arabic, press send, see your
@@ -68,10 +67,10 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
       backgroundColor: AppColors.scaffold,
       appBar: AppBar(
         titleSpacing: 0,
-        title: Row(
+        title: const Row(
           children: [
-            const _DesignerAvatar(size: 34),
-            const SizedBox(width: 10),
+            _DesignerAvatar(size: 34),
+            SizedBox(width: 10),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
@@ -156,8 +155,8 @@ class _DesignerAvatar extends StatelessWidget {
         shape: BoxShape.circle,
       ),
       alignment: Alignment.center,
-      child: Icon(Icons.auto_awesome,
-          color: AppColors.white, size: size * 0.55),
+      child:
+          Icon(Icons.auto_awesome, color: AppColors.white, size: size * 0.55),
     );
   }
 }
@@ -202,8 +201,7 @@ class _MessageRow extends StatelessWidget {
         bubble,
         if (time != null)
           Padding(
-            padding: const EdgeInsetsDirectional.only(
-                top: 4, start: 6, end: 6),
+            padding: const EdgeInsetsDirectional.only(top: 4, start: 6, end: 6),
             child: Text(time!, style: AppTextStyles.caption),
           ),
       ],

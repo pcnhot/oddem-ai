@@ -166,14 +166,14 @@ class _Summary extends ConsumerWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('الإجمالي الفرعي', style: AppTextStyles.body),
+                const Text('الإجمالي الفرعي', style: AppTextStyles.body),
                 Text(Formatters.price(subtotal), style: AppTextStyles.price),
               ],
             ),
             const SizedBox(height: 4),
             // NOTE: installation ETA is intentionally NOT shown here — only at
             // checkout, based on city + availability.
-            Text(
+            const Text(
               'يتم احتساب الشحن وتقدير التركيب عند إتمام الطلب.',
               style: AppTextStyles.caption,
             ),

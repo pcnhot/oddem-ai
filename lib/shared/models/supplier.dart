@@ -30,8 +30,8 @@ class Supplier extends Equatable {
         logoUrl: json['logoUrl'] as String?,
         rating: (json['rating'] as num?)?.toDouble() ?? 0,
         isVerified: json['isVerified'] as bool? ?? false,
-        servedCities: (json['servedCities'] as List?)?.cast<String>() ??
-            const <String>[],
+        servedCities:
+            (json['servedCities'] as List?)?.cast<String>() ?? const <String>[],
       );
 
   Map<String, dynamic> toJson() => <String, dynamic>{

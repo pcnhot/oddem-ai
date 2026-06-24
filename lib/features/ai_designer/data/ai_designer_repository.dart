@@ -38,8 +38,7 @@ class MockAiDesignerRepository implements AiDesignerRepository {
         summary: request.strictReplaceItem == null
             ? 'تم اقتراح بديل واحد مع الإبقاء على بقية عناصر الغرفة كما هي.'
             : 'تم اقتراح بديل لـ«${request.strictReplaceItem}» مع الإبقاء على بقية عناصر الغرفة كما هي تمامًا.',
-        recommendedProducts:
-            replacement == null ? const [] : [replacement],
+        recommendedProducts: replacement == null ? const [] : [replacement],
         estimatedTotal: replacement?.effectivePrice ?? 0,
         style: request.style,
         roomType: request.roomType,
@@ -64,9 +63,8 @@ class MockAiDesignerRepository implements AiDesignerRepository {
     }
 
     final area = request.dimensions?.floorAreaM2;
-    final areaNote = area == null
-        ? ''
-        : ' لمساحة ${area.toStringAsFixed(0)} م².';
+    final areaNote =
+        area == null ? '' : ' لمساحة ${area.toStringAsFixed(0)} م².';
 
     return AiDesignResult(
       title: 'تصميم ${request.roomType} بطابع ${request.style}',

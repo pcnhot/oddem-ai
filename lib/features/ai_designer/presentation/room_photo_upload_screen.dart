@@ -29,7 +29,7 @@ class RoomPhotoUploadScreen extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: 16),
-            Text(
+            const Text(
               'ارفع صورة واضحة لغرفتك ليتمكن المصمم من اقتراح القطع المناسبة وتوزيعها.',
               style: AppTextStyles.bodyMuted,
               textAlign: TextAlign.center,
@@ -108,7 +108,9 @@ class DottedPlaceholder extends StatelessWidget {
                 ),
               ),
               child: Icon(
-                hasPhoto ? Icons.check_rounded : Icons.add_photo_alternate_outlined,
+                hasPhoto
+                    ? Icons.check_rounded
+                    : Icons.add_photo_alternate_outlined,
                 size: 40,
                 color: hasPhoto ? AppColors.success : AppColors.midGrey,
               ),

@@ -47,9 +47,7 @@ class CatalogScreen extends ConsumerWidget {
                       label: 'الكل', value: null, selected: selected == null),
                   for (final c in items)
                     _filterChip(ref,
-                        label: c.name,
-                        value: c.id,
-                        selected: selected == c.id),
+                        label: c.name, value: c.id, selected: selected == c.id),
                 ],
               ),
               loading: () => const SizedBox(),
@@ -70,8 +68,7 @@ class CatalogScreen extends ConsumerWidget {
                 return GridView.builder(
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
                   itemCount: items.length,
-                  gridDelegate:
-                      const SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     childAspectRatio: 0.62,
                     crossAxisSpacing: 12,
@@ -84,8 +81,7 @@ class CatalogScreen extends ConsumerWidget {
                   ),
                 );
               },
-              loading: () =>
-                  const Center(child: CircularProgressIndicator()),
+              loading: () => const Center(child: CircularProgressIndicator()),
               error: (_, __) => const EmptyState(
                 icon: Icons.error_outline,
                 title: 'تعذّر تحميل المنتجات',

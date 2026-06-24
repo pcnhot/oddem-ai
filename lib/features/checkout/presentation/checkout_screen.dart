@@ -48,7 +48,7 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 28),
         children: [
-          Text('مدينة التوصيل والتركيب', style: AppTextStyles.subtitle),
+          const Text('مدينة التوصيل والتركيب', style: AppTextStyles.subtitle),
           const SizedBox(height: 8),
           DropdownButtonFormField<String>(
             value: city,
@@ -66,7 +66,7 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
             },
           ),
           const SizedBox(height: 16),
-          Text('العنوان', style: AppTextStyles.subtitle),
+          const Text('العنوان', style: AppTextStyles.subtitle),
           const SizedBox(height: 8),
           TextField(
             controller: _address,
@@ -101,7 +101,7 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
             ),
           ),
           const SizedBox(height: 16),
-          Text('طريقة الدفع: الدفع عند الاستلام (تجريبي)',
+          const Text('طريقة الدفع: الدفع عند الاستلام (تجريبي)',
               style: AppTextStyles.caption),
           const SizedBox(height: 16),
           ElevatedButton(
@@ -126,8 +126,7 @@ class _CheckoutScreenState extends ConsumerState<CheckoutScreen> {
       children: [
         Text(label,
             style: bold ? AppTextStyles.subtitle : AppTextStyles.bodyMuted),
-        Text(value,
-            style: bold ? AppTextStyles.price : AppTextStyles.body),
+        Text(value, style: bold ? AppTextStyles.price : AppTextStyles.body),
       ],
     );
   }
@@ -169,7 +168,8 @@ class _InstallationCard extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text('تقدير التركيب', style: AppTextStyles.subtitle),
+                      const Text('تقدير التركيب',
+                          style: AppTextStyles.subtitle),
                       const SizedBox(width: 8),
                       _StatusPill(available: est.available),
                     ],
@@ -179,19 +179,19 @@ class _InstallationCard extends StatelessWidget {
                       style: AppTextStyles.bodyMuted.copyWith(height: 1.6)),
                 ],
               ),
-              loading: () => Row(
+              loading: () => const Row(
                 children: [
-                  const SizedBox(
+                  SizedBox(
                     width: 16,
                     height: 16,
                     child: CircularProgressIndicator(strokeWidth: 2),
                   ),
-                  const SizedBox(width: 10),
+                  SizedBox(width: 10),
                   Text('جارٍ حساب تقدير التركيب...',
                       style: AppTextStyles.bodyMuted),
                 ],
               ),
-              error: (_, __) => Text('تعذّر حساب تقدير التركيب حاليًا.',
+              error: (_, __) => const Text('تعذّر حساب تقدير التركيب حاليًا.',
                   style: AppTextStyles.bodyMuted),
             ),
           ),

@@ -69,7 +69,7 @@ class MockData {
   ];
 
   static final List<Product> products = <Product>[
-    Product(
+    const Product(
       id: 'p_1',
       sku: 'ODM-SOFA-001',
       name: 'كنبة زاوية مودرن — 5 مقاعد',
@@ -91,7 +91,7 @@ class MockData {
       glbUrl: 'https://cdn.oddem.sa/models/p_1.glb',
       usdzUrl: 'https://cdn.oddem.sa/models/p_1.usdz',
     ),
-    Product(
+    const Product(
       id: 'p_2',
       sku: 'ODM-SOFA-002',
       name: 'كنبة كلاسيك مخمل — 3 مقاعد',
@@ -115,7 +115,7 @@ class MockData {
       glbUrl: 'https://cdn.oddem.sa/models/p_2.glb',
       usdzUrl: 'https://cdn.oddem.sa/models/p_2.usdz',
     ),
-    Product(
+    const Product(
       id: 'p_3',
       sku: 'ODM-BED-001',
       name: 'سرير مزدوج بتنجيد — مقاس كينج',
@@ -137,7 +137,7 @@ class MockData {
       glbUrl: 'https://cdn.oddem.sa/models/p_3.glb',
       usdzUrl: 'https://cdn.oddem.sa/models/p_3.usdz',
     ),
-    Product(
+    const Product(
       id: 'p_4',
       sku: 'ODM-DIN-001',
       name: 'طاولة طعام رخام — 6 أشخاص',
@@ -161,7 +161,7 @@ class MockData {
       glbUrl: 'https://cdn.oddem.sa/models/p_4.glb',
       usdzUrl: 'https://cdn.oddem.sa/models/p_4.usdz',
     ),
-    Product(
+    const Product(
       id: 'p_5',
       sku: 'ODM-CHR-001',
       name: 'كرسي مكتب جلد إيرغونومي',
@@ -185,12 +185,11 @@ class MockData {
       glbUrl: 'https://cdn.oddem.sa/models/p_5.glb',
       usdzUrl: 'https://cdn.oddem.sa/models/p_5.usdz',
     ),
-    Product(
+    const Product(
       id: 'p_6',
       sku: 'ODM-TBL-001',
       name: 'طاولة قهوة خشبية',
-      description:
-          'طاولة قهوة بتصميم اسكندنافي دافئ وأرفف تخزين سفلية عملية.',
+      description: 'طاولة قهوة بتصميم اسكندنافي دافئ وأرفف تخزين سفلية عملية.',
       categoryId: 'cat_table',
       supplierId: 'sup_2',
       price: 899,
@@ -208,7 +207,7 @@ class MockData {
       glbUrl: 'https://cdn.oddem.sa/models/p_6.glb',
       usdzUrl: 'https://cdn.oddem.sa/models/p_6.usdz',
     ),
-    Product(
+    const Product(
       id: 'p_7',
       sku: 'ODM-LGT-001',
       name: 'مصباح أرضي عصري',
@@ -232,7 +231,7 @@ class MockData {
       glbUrl: 'https://cdn.oddem.sa/models/p_7.glb',
       usdzUrl: 'https://cdn.oddem.sa/models/p_7.usdz',
     ),
-    Product(
+    const Product(
       id: 'p_8',
       sku: 'ODM-STG-001',
       name: 'خزانة عرض زجاجية',

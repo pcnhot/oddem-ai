@@ -96,8 +96,7 @@ class HomeScreen extends ConsumerWidget {
                   );
                 },
               ),
-              loading: () =>
-                  const Center(child: CircularProgressIndicator()),
+              loading: () => const Center(child: CircularProgressIndicator()),
               error: (_, __) => const SizedBox(),
             ),
           ),
@@ -112,8 +111,7 @@ class HomeScreen extends ConsumerWidget {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: items.length,
-              gridDelegate:
-                  const SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 0.62,
                 crossAxisSpacing: 12,
@@ -152,10 +150,10 @@ class _SearchBar extends StatelessWidget {
           borderRadius: BorderRadius.circular(14),
           border: Border.all(color: AppColors.border),
         ),
-        child: Row(
+        child: const Row(
           children: [
-            const Icon(Icons.search, color: AppColors.midGrey),
-            const SizedBox(width: 10),
+            Icon(Icons.search, color: AppColors.midGrey),
+            SizedBox(width: 10),
             Text('ابحث عن أثاث، كنب، طاولات...',
                 style: AppTextStyles.bodyMuted),
           ],
@@ -190,8 +188,8 @@ class _AiBanner extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('صمّم غرفتك بالذكاء الاصطناعي',
-                      style: AppTextStyles.title
-                          .copyWith(color: AppColors.white)),
+                      style:
+                          AppTextStyles.title.copyWith(color: AppColors.white)),
                   const SizedBox(height: 6),
                   Text(
                     'اختر النوع، الميزانية والطراز ودعنا نقترح القطع المناسبة.',

@@ -115,14 +115,12 @@ final appRouter = GoRouter(
     GoRoute(
       path: AppRoutes.planner2d,
       parentNavigatorKey: _rootKey,
-      builder: (_, state) =>
-          Planner2DScreen(product: state.extra as Product?),
+      builder: (_, state) => Planner2DScreen(product: state.extra as Product?),
     ),
     GoRoute(
       path: AppRoutes.arPreview,
       parentNavigatorKey: _rootKey,
-      builder: (_, state) =>
-          ArPreviewScreen(product: state.extra as Product?),
+      builder: (_, state) => ArPreviewScreen(product: state.extra as Product?),
     ),
     GoRoute(
       path: AppRoutes.favorites,
